@@ -1,7 +1,9 @@
 package rocks.zipcode.io.fundamentals;
 
 
+import java.util.ArrayList;
 import java.util.Collection;
+import java.util.List;
 
 /**
  * @author leon on 10/01/2019.
@@ -13,13 +15,16 @@ public class StringUtils {
      */
     public static Collection<String> getAllCasings(String string) {
         // get length of string
+       int length = string.length();
         // get range of length
+
         // get power-set of range
 
         // for every set in power-set
             // uppercase indices of string using set
 
-        
+
+
         return null;
     }
 
@@ -29,7 +34,25 @@ public class StringUtils {
      * @return near-identical string whose characters at specified indices are capitalized
      */
     public static String upperCaseIndices(String string, Integer... indices) {
-        return null;
+
+        char[] stringCharArray = string.toCharArray();
+
+        List<Integer> list = new ArrayList<>();
+
+        for(Integer i : indices){
+           list.add(i);
+        }
+
+        String answer = "";
+
+
+            for(Integer i :list){
+              string = replaceAtIndex(string, Character.toUpperCase(string.charAt(i)), i);
+             }
+
+
+
+        return string;
     }
 
     /**
@@ -39,7 +62,15 @@ public class StringUtils {
      * @return near-identical string with `valueToBeInserted` inserted at `index`
      */
     public static String insertAtIndex(String stringToBeManipulated, String valueToBeInserted, Integer index) {
-        return null;
+
+        String answer = "";
+        String[] stringArr = stringToBeManipulated.split("");
+
+        answer += stringToBeManipulated.substring(0,index);
+        answer += valueToBeInserted;
+        answer += stringToBeManipulated.substring(index);
+
+        return answer;
     }
 
     /**
@@ -49,6 +80,10 @@ public class StringUtils {
      * @return near-identical string with character at `index` replaced with `replacementValue`
      */
     public static String replaceAtIndex(String stringToBeManipulated, Character replacementValue, Integer index) {
-        return null;
+
+     Character thing = stringToBeManipulated.charAt(index);
+
+        stringToBeManipulated = stringToBeManipulated.replace(thing,replacementValue);
+        return stringToBeManipulated;
     }
 }

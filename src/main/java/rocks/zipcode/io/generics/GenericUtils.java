@@ -11,7 +11,7 @@ public class GenericUtils {
      */
     public static <T> T[] toArray(Collection<T> collection) {
       //  T[] answer = (T[]) Array.newInstance(collection.getClass().getComponentType());
-        T[] answer = toArray(collection);
+        T[] answer = (T[]) collection.toArray();
         return answer;
     }
 }
