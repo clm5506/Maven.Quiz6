@@ -1,5 +1,6 @@
 package rocks.zipcode.io.generics;
 
+import java.lang.reflect.Array;
 import java.util.Collection;
 
 public class GenericUtils {
@@ -9,6 +10,8 @@ public class GenericUtils {
      * @return array with contents identical to `collection`
      */
     public static <T> T[] toArray(Collection<T> collection) {
-        return null;
+      //  T[] answer = (T[]) Array.newInstance(collection.getClass().getComponentType());
+        T[] answer = toArray(collection);
+        return answer;
     }
 }

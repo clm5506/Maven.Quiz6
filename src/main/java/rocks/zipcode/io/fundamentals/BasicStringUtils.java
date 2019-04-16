@@ -6,7 +6,14 @@ public class BasicStringUtils {
      * @return new String which wraps the arguments passed in
      */
     public static String getString(char[] chars) {
-        return null;
+
+        String answer = "";
+
+        for(int i = 0; i < chars.length; i++){
+            answer += chars[i];
+        }
+        return answer;
+
     }
 
     /**
@@ -14,7 +21,13 @@ public class BasicStringUtils {
      * @return new String which wraps the arguments passed in
      */
     public static String getString(Character[] chars) {
-        return null;
+        String answer = "";
+
+        for(int i = 0; i < chars.length; i++){
+            answer += chars[i];
+        }
+
+        return answer;
     }
 
     /**
@@ -22,7 +35,20 @@ public class BasicStringUtils {
      * @return identical string with lowercase and uppercase vowels removed
      */
     public static String removeAllVowels(String string) {
-        return null;
+//        String answer = "";
+//
+       String aeiou = "aeiouAEIOU";
+//
+//        String[] stringCharArray = string.split("");
+//
+//        for(int i = 0; i < string.length(); i++){
+//            if(aeiou.indexOf(string.charAt(i)) < 0){
+//                answer += string.charAt(i);
+//            }
+//        }
+
+
+        return removeSpecifiedCharacters(string,aeiou);
     }
 
     /**
@@ -31,6 +57,18 @@ public class BasicStringUtils {
      * @return
      */
     public static String removeSpecifiedCharacters(String string, String charactersToRemove) {
-        return null;
+
+        String answer = "";
+
+        String[] stringCharArray = string.split("");
+
+        for(int i = 0; i < string.length(); i++){
+            if(charactersToRemove.indexOf(string.charAt(i)) < 0){
+                answer += string.charAt(i);
+            }
+        }
+        return answer;
+
+
     }
 }
