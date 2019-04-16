@@ -81,11 +81,18 @@ public class StringUtils {
      */
     public static String replaceAtIndex(String stringToBeManipulated, Character replacementValue, Integer index) {
 
+        //needthis
         Character thing = stringToBeManipulated.charAt(index);
 
-        stringToBeManipulated = stringToBeManipulated.replace(thing,replacementValue);
+//        int indexOf = stringToBeManipulated.indexOf(thing);
+//        String answer = stringToBeManipulated.substring(0,indexOf);
+//        stringToBeManipulated = answer.replace(thing,replacementValue)+ stringToBeManipulated.substring(indexOf);
+//        return stringToBeManipulated;
 
+        stringToBeManipulated = stringToBeManipulated.replaceFirst(thing.toString(),replacementValue.toString());
 
         return stringToBeManipulated;
+
+
     }
 }
