@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class CollectionUtils {
 
@@ -54,15 +55,14 @@ public class CollectionUtils {
     public static Collection<?> flatten(Collection<?>... collections) {
         Collection<? extends Collection<?>> collection = Arrays.asList(collections);
 
+       List<Object> thing = new ArrayList<>();
 
-       List<?> thing = new ArrayList<>();
-//
-//        for(){
-//            for(){
-//
-//            }
-//        }
+        for(Collection c : collection){
+            c.stream().forEach( co -> thing.add(co));
+        }
 
-        return collection;
+
+        Collection<?> answer = thing.stream().collect(Collectors.toList());
+        return answer;
     }
 }

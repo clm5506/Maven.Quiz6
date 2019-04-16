@@ -23,14 +23,12 @@ public class PowerSet<TypeOfSet> {
       List<TypeOfSet> arrayList = new ArrayList<>(originalSet);
 
         for(int i = 0; i < thing.length; i++){
-                for(int j = 1; j <= thing.length; j++) {
-                    Set temp = new HashSet<>(arrayList.subList(i, j));
+            for(int j = i+1; j <= thing.length; j++) {
+                Set temp = new HashSet<>(arrayList.subList(i, j));
 
-                    answer.add(temp);
-                }
+                answer.add(temp);
+            }
         }
-
-
 
         System.out.println(answer);
         return answer;
