@@ -24,8 +24,15 @@ public class StringUtils {
             // uppercase indices of string using set
 
 
+        Collection<String> answer = new ArrayList<>();
+        for(int i = 0; i < string.length(); i++){
 
-        return null;
+            answer.add(upperCaseIndices(string,i));
+            System.out.println(answer);
+        }
+
+        System.out.println("answer to be returned" + answer);
+        return answer;
     }
 
     /**
@@ -35,22 +42,15 @@ public class StringUtils {
      */
     public static String upperCaseIndices(String string, Integer... indices) {
 
-        char[] stringCharArray = string.toCharArray();
-
         List<Integer> list = new ArrayList<>();
 
         for(Integer i : indices){
            list.add(i);
         }
 
-        String answer = "";
-
-
             for(Integer i :list){
               string = replaceAtIndex(string, Character.toUpperCase(string.charAt(i)), i);
              }
-
-
 
         return string;
     }
